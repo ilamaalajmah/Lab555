@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab HTML</title>
+    <link id="stylesheet1" rel="stylesheet" href="Stylesheet1.css">
+    <link id="stylesheet2" rel="stylesheet" href="Stylesheet2.css" disabled>
+</head>
+<body>
+    <h1>Welcome to My Homepage</h1>
+    <p>Use the menu to select different stylesheets</p>
+    <ul>
+        <li><a href="#" onclick="switchStylesheet('Stylesheet1.css')">Stylesheet 1</a></li>
+        <li><a href="#" onclick="switchStylesheet('Stylesheet2.css')">Stylesheet 2</a></li>
+        <li><a href="#" onclick="switchStylesheet(null)">No Stylesheet</a></li>
+    </ul>
+    <h1>Same Page Different Stylesheets</h1>
+    <p>This is a demonstration of how different stylesheets can change the layout of your HTML page.</p>
+    <h2>No Styles</h2>
+    <p>Click here to see how the page looks with no stylesheet:</p>
+    <p><a="#" class="link-nostyle" onclick="switchStylesheet(null)">No Stylesheet</a></p>
+    <h3>Side-Bar</h3>
+    <p>Lorem ipsum dolor sit amet...</p>
+</body>
+<script>
+    function switchStylesheet(stylesheet) {
+        document.getElementById('stylesheet1').disabled = stylesheet !== 'Stylesheet1.css';
+        document.getElementById('stylesheet2').disabled = stylesheet !== 'Stylesheet2.css';
+    }
+</script>
+</html>
